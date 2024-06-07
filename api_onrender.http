@@ -1,0 +1,64 @@
+
+GET https://webservicemovies.onrender.com/
+
+### Recuperar todas las peliculas
+GET https://webservicemovies.onrender.com/movies
+
+### recuperar una pelicula por id
+GET https://webservicemovies.onrender.com/movies/241bf55d-b649-4109-af7c-0e6890ded3fc
+
+### 
+GET https://webservicemovies.onrender.com/movies/5/terror/2020
+
+### Recuperar peliculas por genero
+GET https://webservicemovies.onrender.com/movies?genre=action
+
+### Recuperar peliculas por genero
+GET https://webservicemovies.onrender.com/movies?year=2012
+
+###
+GET https://webservicemovies.onrender.com/movies?genre=Action&year=2008
+
+### Crear una pelicula con POST
+POST https://webservicemovies.onrender.com/movies
+Content-Type: application/json
+
+{
+    "title": "The Godfather",
+    "year": 1975,
+    "director": "Francis Ford Coppola",
+    "duration": 175,
+    "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+    "genre": [
+      "Crime",
+      "Drama"
+      ],
+    "sql": "SELECT * FROM users"
+}
+
+### Actualizar una pelicula con PATCH enlugar de PUT
+PATCH https://webservicemovies.onrender.com/movies/64166462-5b22-4b1e-90c6-d5c3b49b310b
+Content-Type: application/json
+
+{
+    "id": "5",
+    "title": "Hola",
+    "year": 1993
+}
+
+### Actualizar una pelicula con PUT: Es idempotente  
+PUT https://webservicemovies.onrender.com/movies/64166462-5b22-4b1e-90c6-d5c3b49b310b
+Content-Type: application/json
+
+{
+    "title": "The Godfather",
+    "year": 1975,
+    "director": "Francis Ford Coppola",
+    "duration": 175,
+    "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+    "genre": [
+      "Crime",
+      "Drama"
+      ],
+    "sql": "SELECT * FROM users"
+}

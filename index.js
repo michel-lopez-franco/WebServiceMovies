@@ -19,7 +19,8 @@ app.use(cors({
       'http://localhost:3000',
       'http://movies.com',
       'http://127.0.0.1:5500',
-      'https://mich.com']
+      'https://webservicemovies.onrender.com',
+      'https://michel-lopez-franco.github.io/StaticWebMovies']
 
     if (ACEPPTED_ORIGINS.includes(origin) || !origin) {
       callback(null, true)
